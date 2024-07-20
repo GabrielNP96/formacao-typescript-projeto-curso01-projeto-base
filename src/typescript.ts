@@ -12,14 +12,21 @@ lista.push(22);
 
 //type alias
 type Transacao = {
-    tipoTransacao: string,
-    data: Date,
-    valor: number
+    tipoTransacao: tipoTransacao;
+    data: Date;
+    valor: number;
 
 }
 
+//enum
+enum tipoTransacao {
+    DEPOSITO = "Depósito",
+    TRANSFERENCIA = "Transferência",
+    PAGAMENTO_BOLETO = "Pagamento de Boleto"
+}
+
 const novaTransacao: Transacao = {
-    tipoTransacao: "",
+    tipoTransacao: tipoTransacao.DEPOSITO,
     data: new Date(),
     valor: 0
 }

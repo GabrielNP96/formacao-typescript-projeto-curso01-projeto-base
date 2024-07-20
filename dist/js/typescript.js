@@ -7,8 +7,15 @@ qualquer = 12;
 var lista = [];
 lista.push(1);
 lista.push(22);
+//enum
+var tipoTransacao;
+(function (tipoTransacao) {
+    tipoTransacao["DEPOSITO"] = "Dep\u00F3sito";
+    tipoTransacao["TRANSFERENCIA"] = "Transfer\u00EAncia";
+    tipoTransacao["PAGAMENTO_BOLETO"] = "Pagamento de Boleto";
+})(tipoTransacao || (tipoTransacao = {}));
 var novaTransacao = {
-    tipoTransacao: "",
+    tipoTransacao: tipoTransacao.DEPOSITO,
     data: new Date(),
     valor: 0
 };
